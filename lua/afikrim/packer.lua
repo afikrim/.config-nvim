@@ -59,5 +59,22 @@ return require('packer').startup(function(use)
 		}
 	}
 
-	use 'mfussenegger/nvim-dap'
+    use 'mfussenegger/nvim-dap'
+    use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }
+    use {
+        "microsoft/vscode-js-debug",
+        opt = true,
+        run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out" 
+    }
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+        },
+    }
+
+    use 'wakatime/vim-wakatime'
+    use 'lewis6991/gitsigns.nvim'
+    use 'numToStr/Comment.nvim'
 end)

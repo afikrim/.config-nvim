@@ -1,3 +1,5 @@
+vim.opt.exrc = true
+
 vim.opt.nu = true
 vim.opt.rnu = true
 
