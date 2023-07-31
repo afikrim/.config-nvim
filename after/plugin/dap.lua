@@ -104,8 +104,6 @@ for i, ext in ipairs(exts) do
       cwd = vim.fn.getcwd(),
       program = "${workspaceFolder}/node_modules/next/dist/bin/next",
       args = { "dev" },
-      autoAttachChildProcesses = true,
-      smartStep = true,
       console = "integratedTerminal",
       skipFiles = { "<node_internals>/**", "node_modules/**" },
     },
