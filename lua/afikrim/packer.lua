@@ -89,4 +89,12 @@ return require("packer").startup(function(use)
 			"jose-elias-alvarez/null-ls.nvim",
 		},
 	})
+	use({
+		"wintermute-cell/gitignore.nvim",
+		requires = {
+			"nvim-telescope/telescope.nvim", -- optional: for multi-select
+		},
+	})
+
+	use("mg979/vim-visual-multi")
 end)
