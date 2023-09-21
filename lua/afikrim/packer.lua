@@ -99,4 +99,15 @@ return require("packer").startup(function(use)
 	use("mg979/vim-visual-multi")
 	use("Mofiqul/vscode.nvim")
 	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
+	use("tiagovla/scope.nvim")
+
+	use({
+		"NeogitOrg/neogit",
+		requires = {
+			"nvim-lua/plenary.nvim", -- required
+			"nvim-telescope/telescope.nvim", -- optional
+			"sindrets/diffview.nvim", -- optional
+			"ibhagwan/fzf-lua", -- optional
+		},
+	})
 end)
