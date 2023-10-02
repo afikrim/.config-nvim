@@ -89,9 +89,9 @@ lsp.on_attach(function(client, bufnr)
 		vim.lsp.buf.signature_help()
 	end, opts)
 
-	vim.keymap.set({ "n", "x" }, "gq", function()
+	vim.keymap.set("n", "gq", function()
 		vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
-	end, opts)
+	end)
 end)
 
 local formatting_config = {
@@ -122,6 +122,7 @@ local formatting_config = {
 			"go",
 			"rust",
 			"python",
+            "proto",
 		},
 	},
 }
@@ -144,6 +145,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.gofmt,
 		null_ls.builtins.formatting.rustfmt,
+		null_ls.builtins.formatting.protolint,
 		null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.diagnostics.pylint,
 		null_ls.builtins.diagnostics.stylelint,
