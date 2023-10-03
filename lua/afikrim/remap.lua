@@ -43,3 +43,6 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 vim.keymap.set("t", "<C-w>n", "<C-\\><C-n>")
+
+vim.keymap.set("n", "<Tab>", "<cmd>tabnext<CR>")
+vim.keymap.set("n", "<S-Tab>", "<cmd>tabprevious<CR>")
