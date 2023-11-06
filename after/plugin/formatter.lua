@@ -14,9 +14,10 @@ formatter.setup({
 		dart = {
 			require("formatter.filetypes.dart").dartformat,
 		},
-        go = {
-            require("formatter.filetypes.go").gofmt,
-        },
+		go = {
+			require("formatter.filetypes.go").gofmt,
+			require("formatter.filetypes.go").goimports,
+		},
 		["*"] = {
 			-- "formatter.filetypes.any" defines default configurations for any
 			-- filetype
