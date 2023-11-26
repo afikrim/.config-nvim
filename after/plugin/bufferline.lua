@@ -294,4 +294,9 @@ vim.keymap.set("n", "<C-h>", "<cmd>BufferLineCyclePrev<CR>")
 vim.keymap.set("n", "<C-S-l>", "<cmd>BufferLineMoveNext<CR>")
 vim.keymap.set("n", "<C-S-h>", "<cmd>BufferLineMovePrev<CR>")
 
-vim.keymap.set("n", "<leader>w", "<cmd>bd | BufferLineGoToBuffer 1<CR>")
+vim.keymap.set("n", "<leader>w", function()
+	local currentIndex = vim.fn.bufnr("%")
+
+    vim.cmd("BufferLineCyclePrev")
+	vim.cmd("bdelete! " .. currentIndex)
+end)

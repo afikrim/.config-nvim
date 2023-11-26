@@ -48,6 +48,7 @@ local dap = require("dap")
 local dap_utils = require("dap.utils")
 
 -- configuration
+dap.defaults.go.terminal_win_cmd = "tabnew"
 dap.defaults.fallback.terminal_win_cmd = "tabnew"
 
 dap.adapters.delve = {
@@ -59,22 +60,10 @@ dap.adapters.delve = {
 	},
 }
 
-dap.adapters.delve_attach = {
-	type = "server",
-	host = "127.0.0.1",
-	port = 38697,
-}
-
 -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
 dap.configurations.go = {
 	{
 		type = "delve",
-		name = "Debug",
-		request = "launch",
-		program = "${file}",
-	},
-	{
-		type = "delve_attach",
 		name = "Debug",
 		request = "launch",
 		program = "${file}",
