@@ -49,6 +49,7 @@ return require("packer").startup(function(use)
 
 	-- Debug Plugins
 	use("mfussenegger/nvim-dap")
+	use({ "leoluz/nvim-dap-go", requires = { "mfussenegger/nvim-dap" } })
 	use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } })
 	use({
 		"microsoft/vscode-js-debug",
