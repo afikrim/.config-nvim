@@ -9,8 +9,11 @@ local ensure_installed = {
 	"rust_analyzer",
 	"gopls",
 	"pylsp",
+	"intelephense",
+	"jdtls",
 }
 lsp.ensure_installed(ensure_installed)
+lsp.skip_server_setup({ "jdtls" })
 
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
@@ -70,7 +73,7 @@ local on_attach = function(client, bufnr)
 		telescope_builtin.lsp_workspace_symbols()
 	end, opts)
 	vim.keymap.set("n", "<leader>vd", function()
-		vim.diagnostic.open_float()
+		telescope_builtin.diagnostics()
 	end, opts)
 	vim.keymap.set("n", "[d", function()
 		vim.diagnostic.goto_next()

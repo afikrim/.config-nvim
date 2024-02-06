@@ -46,6 +46,7 @@ return require("packer").startup(function(use)
 
 	-- Language Plugins
 	use("dart-lang/dart-vim-plugin")
+	use("mfussenegger/nvim-jdtls")
 
 	-- Debug Plugins
 	use("mfussenegger/nvim-dap")
@@ -99,10 +100,37 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	-- DBM
+	use({
+		"kristijanhusak/vim-dadbod-ui",
+		requires = {
+			{ "tpope/vim-dadbod" },
+			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" } },
+		},
+		cmd = {
+			"DBUI",
+			"DBUIToggle",
+			"DBUIAddConnection",
+			"DBUIFindBuffer",
+		},
+		init = function()
+			-- Your DBUI configuration
+			vim.g.db_ui_use_nerd_fonts = 1
+		end,
+	})
+
+	-- REST Client
+	use({
+		"NTBBloodbath/rest.nvim",
+        tag = '0.2',
+		requires = { "nvim-lua/plenary.nvim" },
+	})
+
 	-- Others Plugins
 	use("wakatime/vim-wakatime")
 	use("numToStr/Comment.nvim")
 	use("github/copilot.vim")
 	use("mbbill/undotree")
 	use("windwp/nvim-autopairs")
+	use({ "ojroques/vim-oscyank", branch = "main" })
 end)

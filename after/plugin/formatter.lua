@@ -8,6 +8,15 @@ formatter.setup({
 		lua = {
 			require("formatter.filetypes.lua").stylua,
 		},
+		javascript = {
+			require("formatter.filetypes.javascript").prettier,
+		},
+		javascriptreact = {
+			require("formatter.filetypes.javascript").prettier,
+		},
+		typescript = {
+			require("formatter.filetypes.typescript").prettier,
+		},
 		typescriptreact = {
 			require("formatter.filetypes.typescript").prettier,
 		},
@@ -17,6 +26,12 @@ formatter.setup({
 		go = {
 			require("formatter.filetypes.go").gofmt,
 			require("formatter.filetypes.go").goimports,
+		},
+		-- php = {
+		-- 	require("formatter.filetypes.php").phpcbf,
+		-- },
+		java = {
+			require("formatter.filetypes.java").google_java_format,
 		},
 		["*"] = {
 			-- "formatter.filetypes.any" defines default configurations for any

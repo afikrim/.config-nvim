@@ -12,6 +12,9 @@ require("nvim-treesitter.configs").setup({
 		"dart",
 		"javascript",
 		"typescript",
+		"php",
+		"http",
+		"json",
 	},
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)
