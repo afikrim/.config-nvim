@@ -72,8 +72,11 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<leader>vws", function()
 		telescope_builtin.lsp_workspace_symbols()
 	end, opts)
-	vim.keymap.set("n", "<leader>vd", function()
+	vim.keymap.set("n", "<leader>d", function()
 		telescope_builtin.diagnostics()
+	end, opts)
+	vim.keymap.set("n", "<leader>vd", function()
+		vim.diagnostic.open_float()
 	end, opts)
 	vim.keymap.set("n", "[d", function()
 		vim.diagnostic.goto_next()
@@ -94,18 +97,6 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "gq", function()
 		vim.cmd("Format")
 	end)
-
-	local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-	if client.supports_method("textDocument/formatting") then
-		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-		vim.api.nvim_create_autocmd("BufWritePost", {
-			group = augroup,
-			buffer = bufnr,
-			callback = function()
-				vim.cmd("FormatWrite")
-			end,
-		})
-	end
 end
 
 lsp.on_attach(on_attach)

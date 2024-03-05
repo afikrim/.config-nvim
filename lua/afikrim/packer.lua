@@ -42,7 +42,13 @@ return require("packer").startup(function(use)
 	})
 
 	-- Formatting Plugins
-	use("mhartington/formatter.nvim")
+	-- use("mhartington/formatter.nvim")
+	use({
+		"stevearc/conform.nvim",
+		config = function()
+			require("conform").setup()
+		end,
+	})
 
 	-- Language Plugins
 	use("dart-lang/dart-vim-plugin")
@@ -122,7 +128,7 @@ return require("packer").startup(function(use)
 	-- REST Client
 	use({
 		"NTBBloodbath/rest.nvim",
-        tag = '0.2',
+		tag = "0.2",
 		requires = { "nvim-lua/plenary.nvim" },
 	})
 

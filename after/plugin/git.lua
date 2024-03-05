@@ -1,6 +1,10 @@
 local gitignore = require("gitignore")
 
-vim.keymap.set("n", "<leader>gi", gitignore.generate)
+local working_dir = vim.fn.getcwd()
+vim.keymap.set("n", "<leader>gi", function()
+	local gitignore_location = vim.fn.input(".gitignore path: ", working_dir .. "/.gitignore")
+	gitignore.generate(gitignore_location)
+end)
 
 local signs = require("gitsigns")
 

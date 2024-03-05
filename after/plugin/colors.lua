@@ -1,4 +1,4 @@
-vim.o.background = "dark"
+vim.o.background = "light"
 
 local vscode = require("vscode")
 
@@ -8,3 +8,5 @@ vscode.setup({
 	disable_nvimtree_bg = true,
 })
 vscode.load()
+
+vim.cmd("colorscheme vscode")
