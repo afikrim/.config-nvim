@@ -66,6 +66,7 @@ return require("packer").startup(function(use)
 
 	-- UI Plugins
 	use("Mofiqul/vscode.nvim")
+	use("f-person/auto-dark-mode.nvim")
 	use("tiagovla/scope.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use({
