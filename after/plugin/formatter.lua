@@ -11,6 +11,7 @@ conform.setup({
 		json = { { "prettierd", "prettier" } },
 		yaml = { { "prettierd", "prettier" } },
 		python = { "isort", "black" },
+		sql = { "sqlfmt" },
 		["*"] = { "codespell" },
 		["_"] = { "trim_whitespace" },
 	},
